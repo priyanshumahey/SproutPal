@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
 export default function home() {
   return (
     <main>
@@ -8,9 +11,9 @@ export default function home() {
         let's help you meet some new pals
       </div>
       <div className="w-full flex">
-        <button className="mt-8 mx-auto text-white bg-black px-4 py-3 rounded">
-          find me a friend
-        </button>
+        <Button className="mt-8 mx-auto">
+          <Link href="/form">find me a friend</Link>
+        </Button>
       </div>
     </main>
   );
