@@ -6,12 +6,14 @@ type FormPageProps = {
   question: string;
   placeholder?: string;
   setProgress: React.Dispatch<React.SetStateAction<number>>;
+  setValue?: any;
 };
 
 const FormPage: React.FC<FormPageProps> = ({
   question,
   placeholder,
   setProgress,
+  setValue
 }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -38,6 +40,8 @@ const FormPage: React.FC<FormPageProps> = ({
           onClick={() => {
             setProgress?.((prev: number) => prev + 1);
             setInputValue("");
+            console.log(inputValue);
+            setValue(inputValue);
           }}
         >
           next
