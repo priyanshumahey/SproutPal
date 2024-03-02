@@ -19,7 +19,7 @@ duckduckgo-search
 yfinance
 pandas_datareader
 langchain_experimental
-pysqlite3
+# pysqlite3
 google-search-results
 beautifulsoup4==4.12.2
 beautifulsoup4==4.12.2
