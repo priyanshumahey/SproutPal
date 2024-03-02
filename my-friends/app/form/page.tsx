@@ -7,68 +7,74 @@ import { useState } from "react";
 export default function Form() {
   const [progress, setProgress] = useState(0);
   const [data, setData] = useState({
-      "name": "",
-      "age": 0,
-      "music": "",
-      "free_days": {
-          "monday": false,
-          "tuesday": false,
-          "wednesday": false,
-          "thursday": false,
-          "friday": false,
-          "saturday": false,
-          "sunday": false
-      },
-      "spirit_veg": "",
-      "horoscope": "",
-      "hobbies": "",
-      "activities_dislike": "",
-      "activities_interested": "",
-      "discord": {
-          "present": false,
-          "username": ""
-      }
+    name: "",
+    age: 0,
+    music: "",
+    free_days: {
+      monday: false,
+      tuesday: false,
+      wednesday: false,
+      thursday: false,
+      friday: false,
+      saturday: false,
+      sunday: false,
+    },
+    spirit_veg: "",
+    horoscope: "",
+    hobbies: "",
+    activities_dislike: "",
+    activities_interested: "",
+    discord: {
+      present: false,
+      username: "",
+    },
   });
 
   const updateName = (name: string) => {
     setData((prev) => ({ ...prev, name }));
-  }
-  
+  };
+
   const updateAge = (age: number) => {
     setData((prev) => ({ ...prev, age }));
-  }
+  };
 
   const updateMusic = (music: string) => {
     setData((prev) => ({ ...prev, music }));
-  }
+  };
 
   const updateVegetable = (spirit_veg: string) => {
     setData((prev) => ({ ...prev, spirit_veg }));
-  }
-  
+  };
+
   const updateHoroscope = (horoscope: string) => {
     setData((prev) => ({ ...prev, horoscope }));
-  }
+  };
 
   const updateHobbies = (hobbies: string) => {
     setData((prev) => ({ ...prev, hobbies }));
-  }
+  };
 
   const updateActivitiesDislike = (activities_dislike: string) => {
     setData((prev) => ({ ...prev, activities_dislike }));
-  }
+  };
 
   const updateActivitiesInterested = (activities_interested: string) => {
     setData((prev) => ({ ...prev, activities_interested }));
-  }
+  };
 
   const updateDiscord = (discord: string) => {
     if (discord !== "") {
-      setData((prev) => ({ ...prev, discord: { present: true, username: discord } }));
+      setData((prev) => ({
+        ...prev,
+        discord: { present: true, username: discord },
+      }));
     } else {
-      setData((prev) => ({ ...prev, discord: { present: false, username: "" } }));
+      setData((prev) => ({
+        ...prev,
+        discord: { present: false, username: "" },
+      }));
     }
-  }
+  };
 
   const renderFormPage = () => {
     if (progress === 0) {
@@ -77,7 +83,7 @@ export default function Form() {
           question="what is your name?"
           placeholder="name"
           setProgress={setProgress}
-          setValue={ updateName }
+          setValue={updateName}
         />
       );
     } else if (progress === 1) {
@@ -86,7 +92,7 @@ export default function Form() {
           question="hi! how old are you?"
           placeholder="age"
           setProgress={setProgress}
-          setValue={ updateAge }
+          setValue={updateAge}
         />
       );
     } else if (progress === 2) {
@@ -95,7 +101,7 @@ export default function Form() {
           question="what type of music do you listen to?"
           placeholder="genre; songs"
           setProgress={setProgress}
-          setValue={ setData }
+          setValue={setData}
         />
       );
     } else if (progress === 3) {
@@ -103,16 +109,15 @@ export default function Form() {
         <InputPage
           question="when are you usually free to meet up, [name]?"
           setProgress={setProgress}
-          setValue={ updateMusic }
+          setValue={updateMusic}
         />
       );
     } else if (progress === 4) {
       return (
         <FormPage
           question="what is your spirit vegetable?"
-          placeholder="genre; songs"
           setProgress={setProgress}
-          setValue={ updateVegetable }
+          setValue={updateVegetable}
         />
       );
     } else if (progress === 5) {
@@ -121,7 +126,8 @@ export default function Form() {
           question="nice choice! very healthy too. what is your horoscope?"
           placeholder="gemini"
           setProgress={setProgress}
-          setValue={ updateHoroscope }
+          setValue={updateHoroscope}
+          progress={progress}
         />
       );
     } else if (progress === 6) {
@@ -129,7 +135,7 @@ export default function Form() {
         <FormPage
           question="are there any hobbies that you are passionate about?"
           setProgress={setProgress}
-          setValue={ updateHobbies }
+          setValue={updateHobbies}
         />
       );
     } else if (progress === 7) {
@@ -138,7 +144,7 @@ export default function Form() {
           question="nice choice! very healthy too. what is your horoscope?"
           placeholder="genre; songs"
           setProgress={setProgress}
-          setValue={ updateHobbies }
+          setValue={updateHobbies}
         />
       );
     } else if (progress === 8) {
@@ -146,7 +152,7 @@ export default function Form() {
         <FormPage
           question="what are some activities you dislike or would never try?"
           setProgress={setProgress}
-          setValue={ updateActivitiesDislike }
+          setValue={updateActivitiesDislike}
         />
       );
     } else if (progress === 9) {
@@ -154,7 +160,7 @@ export default function Form() {
         <FormPage
           question="are there any hobbies that you have been wanting to get into?"
           setProgress={setProgress}
-          setValue={ updateActivitiesInterested }
+          setValue={updateActivitiesInterested}
         />
       );
     } else if (progress === 10) {
@@ -164,7 +170,7 @@ export default function Form() {
           <FormPage
             question="optional: Discord ID (if you would like to connect with your matches"
             setProgress={setProgress}
-            setValue={ updateDiscord }
+            setValue={updateDiscord}
           />
         </>
       );

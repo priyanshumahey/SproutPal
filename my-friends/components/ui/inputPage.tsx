@@ -18,12 +18,6 @@ const daysOfWeek = [
 ];
 
 const InputPage: React.FC<InputPageProps> = ({ question, setProgress }) => {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
-
   return (
     <ChakraProvider>
       <main>
@@ -32,8 +26,8 @@ const InputPage: React.FC<InputPageProps> = ({ question, setProgress }) => {
             {question}
           </div>
           <div className="mt-8">
-            {daysOfWeek.map((day) => (
-              <div className="flex mt-4">
+            {daysOfWeek.map((day, i) => (
+              <div className="flex mt-4" key={i}>
                 <ChakraCheckbox />
                 <div className="pl-4">{day}</div>
               </div>
@@ -45,7 +39,6 @@ const InputPage: React.FC<InputPageProps> = ({ question, setProgress }) => {
             className="float-right"
             onClick={() => {
               setProgress?.((prev: number) => prev + 1);
-              setInputValue("");
             }}
           >
             next

@@ -1,19 +1,43 @@
 import React, { useState } from "react";
 import { Input } from "./input";
 import { Button } from "./button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./select";
+
+const horoscopeSigns = [
+  "Aries",
+  "Taurus",
+  "Gemini",
+  "Cancer",
+  "Leo",
+  "Virgo",
+  "Libra",
+  "Scorpio",
+  "Sagittarius",
+  "Capricorn",
+  "Aquarius",
+  "Pisces",
+];
 
 type FormPageProps = {
   question: string;
   placeholder?: string;
   setProgress: React.Dispatch<React.SetStateAction<number>>;
   setValue?: any;
+  progress?: number;
 };
 
 const FormPage: React.FC<FormPageProps> = ({
   question,
   placeholder,
   setProgress,
-  setValue
+  setValue,
+  progress,
 }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -21,18 +45,39 @@ const FormPage: React.FC<FormPageProps> = ({
     setInputValue(e.target.value);
   };
 
+  const renderInput = () => {
+    if (progress === 5) {
+      return (
+        <Select>
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            {horoscopeSigns.map((horoscope, i) => (
+              <SelectItem value={horoscope} key={i}>
+                {horoscope}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      );
+    }
+    return (
+      <Input
+        value={inputValue}
+        onChange={handleInputChange}
+        placeholder={placeholder}
+      />
+    );
+  };
+
   return (
-    <main>
+    <main className="w-full h-full absolute top-0 left-0">
       <div className="w-3/5 m-auto">
-        <div className="mt-56 text-4xl font-semibold text-center">
+        <div className="pt-56 text-4xl font-semibold text-center">
           {question}
         </div>
-        <Input
-          className="mt-8"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder={placeholder}
-        />
+        <div className="mt-8">{renderInput()}</div>
       </div>
       <div className="w-11/12 mt-64">
         <Button
@@ -40,7 +85,6 @@ const FormPage: React.FC<FormPageProps> = ({
           onClick={() => {
             setProgress?.((prev: number) => prev + 1);
             setInputValue("");
-            console.log(inputValue);
             setValue(inputValue);
           }}
         >
