@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Input } from "./input";
 import { Button } from "./button";
+import { useRouter } from "next/navigation";
+
 import {
   Select,
   SelectContent,
@@ -44,6 +46,7 @@ const FormPage: React.FC<FormPageProps> = ({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
+  const router = useRouter();
 
   const renderInput = () => {
     if (progress === 5) {
@@ -83,9 +86,13 @@ const FormPage: React.FC<FormPageProps> = ({
         <Button
           className="float-right"
           onClick={() => {
-            setProgress?.((prev: number) => prev + 1);
-            setInputValue("");
-            setValue(inputValue);
+            if (progress === 10) {
+              router.push("/result", { scroll: false });
+            } else {
+              setProgress?.((prev: number) => prev + 1);
+              setInputValue("");
+              setValue(inputValue);
+            }
           }}
         >
           next

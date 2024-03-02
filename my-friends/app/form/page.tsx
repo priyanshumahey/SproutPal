@@ -171,6 +171,7 @@ export default function Form() {
             question="optional: Discord ID (if you would like to connect with your matches"
             setProgress={setProgress}
             setValue={updateDiscord}
+            progress={progress}
           />
         </>
       );
