@@ -1,6 +1,7 @@
 "use client";
 
 import FormPage from "@/components/ui/formPage";
+import InputPage from "@/components/ui/inputPage";
 import { useState } from "react";
 
 export default function form() {
@@ -33,9 +34,8 @@ export default function form() {
       );
     } else if (progress === 3) {
       return (
-        <FormPage
-          question="what type of music do you listen to?"
-          placeholder="genre; songs"
+        <InputPage
+          question="when are you usually free to meet up, [name]?"
           setProgress={setProgress}
         />
       );
