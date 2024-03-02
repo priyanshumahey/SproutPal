@@ -1,0 +1,23 @@
+{
+    "name": "Joe B",
+    "age": 21,
+    "music": "pop",
+    "free_days": {
+        "monday": true,
+        "tuesday": true,
+        "wednesday": false,
+        "thursday": true,
+        "friday": true,
+        "saturday": false,
+        "sunday": false
+    },
+    "spirit_veg": "Corn",
+    "horoscope": "Aries",
+    "hobbies": "Reading, writing, and playing video games",
+    "activities_dislike": "I don't like going to the beach or hiking",
+    "activities_interested": "I like going to the movies and going to the mall",
+    "discord": {
+        "present": true,
+        "username": "JoeB"
+    }
+}
