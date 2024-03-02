@@ -16,12 +16,19 @@ export default function form() {
         />
       );
     } else if (progress === 1) {
-      return <FormPage question="hi! how old are you?" placeholder="age" />;
+      return (
+        <FormPage
+          question="hi! how old are you?"
+          placeholder="age"
+          setProgress={setProgress}
+        />
+      );
     } else if (progress === 2) {
       return (
         <FormPage
           question="what type of music do you listen to?"
           placeholder="genre; songs"
+          setProgress={setProgress}
         />
       );
     } else if (progress === 3) {
@@ -29,6 +36,7 @@ export default function form() {
         <FormPage
           question="what type of music do you listen to?"
           placeholder="genre; songs"
+          setProgress={setProgress}
         />
       );
     } else if (progress === 4) {
@@ -36,6 +44,7 @@ export default function form() {
         <FormPage
           question="what is your spirit vegetable?"
           placeholder="genre; songs"
+          setProgress={setProgress}
         />
       );
     } else if (progress === 5) {
@@ -43,30 +52,44 @@ export default function form() {
         <FormPage
           question="nice choice! very healthy too. what is your horoscope?"
           placeholder="gemini"
+          setProgress={setProgress}
         />
       );
     } else if (progress === 6) {
       return (
-        <FormPage question="are there any hobbies that you are passionate about?" />
+        <FormPage
+          question="are there any hobbies that you are passionate about?"
+          setProgress={setProgress}
+        />
       );
     } else if (progress === 7) {
       return (
         <FormPage
           question="nice choice! very healthy too. what is your horoscope?"
           placeholder="genre; songs"
+          setProgress={setProgress}
         />
       );
     } else if (progress === 8) {
       return (
-        <FormPage question="what are some activities you dislike or would never try?" />
+        <FormPage
+          question="what are some activities you dislike or would never try?"
+          setProgress={setProgress}
+        />
       );
     } else if (progress === 9) {
       return (
-        <FormPage question="are there any hobbies that you have been wanting to get into?" />
+        <FormPage
+          question="are there any hobbies that you have been wanting to get into?"
+          setProgress={setProgress}
+        />
       );
     } else if (progress === 10) {
       return (
-        <FormPage question="optional: Discord ID (if you would like to connect with your matches" />
+        <FormPage
+          question="optional: Discord ID (if you would like to connect with your matches"
+          setProgress={setProgress}
+        />
       );
     }
   };

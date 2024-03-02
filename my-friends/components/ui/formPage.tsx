@@ -5,7 +5,7 @@ import { Button } from "./button";
 type FormPageProps = {
   question: string;
   placeholder?: string;
-  setProgress?: React.Dispatch<React.SetStateAction<number>>;
+  setProgress: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const FormPage: React.FC<FormPageProps> = ({
