@@ -5,9 +5,14 @@ import { Button } from "./button";
 type FormPageProps = {
   question: string;
   placeholder?: string;
+  setProgress?: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const FormPage: React.FC<FormPageProps> = ({ question, placeholder }) => {
+const FormPage: React.FC<FormPageProps> = ({
+  question,
+  placeholder,
+  setProgress,
+}) => {
   return (
     <main>
       <div className="w-3/5 m-auto">
@@ -17,7 +22,12 @@ const FormPage: React.FC<FormPageProps> = ({ question, placeholder }) => {
         <Input className="mt-8" placeholder={placeholder} />
       </div>
       <div className="w-11/12 mt-64">
-        <Button className="float-right">next</Button>
+        <Button
+          className="float-right"
+          onClick={() => setProgress?.((prev: number) => prev + 1)}
+        >
+          next
+        </Button>
       </div>
     </main>
   );
