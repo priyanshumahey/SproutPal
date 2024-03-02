@@ -7,6 +7,8 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 from utils import bedrock
 
+from langchain.llms.bedrock import Bedrock
+
 def init():
     load_dotenv()
 
