@@ -87,7 +87,7 @@ const FormPage: React.FC<FormPageProps> = ({
           className="float-right"
           onClick={() => {
             if (progress === 10) {
-              router.push("/result", { scroll: false });
+              router.push("/chat", { scroll: false });
             } else {
               setProgress?.((prev: number) => prev + 1);
               setInputValue("");
