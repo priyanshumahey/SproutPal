@@ -161,6 +161,7 @@ export default function Form() {
           question="are there any hobbies that you have been wanting to get into?"
           setProgress={setProgress}
           setValue={updateActivitiesInterested}
+          progress={progress}
         />
       );
     } else if (progress === 10) {

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Chat = () => {
@@ -35,11 +36,8 @@ const Chat = () => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <Button
-          className="px-8"
-          onClick={() => router.push("/result", { scroll: false })}
-        >
-          go
+        <Button className="px-8">
+          <Link href="/result">go</Link>
         </Button>
       </div>
     </div>

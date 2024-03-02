@@ -73,7 +73,6 @@ const FormPage: React.FC<FormPageProps> = ({
       />
     );
   };
-
   return (
     <main className="w-full h-full absolute top-0 left-0">
       <div className="w-3/5 m-auto">
