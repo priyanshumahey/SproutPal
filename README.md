@@ -1,6 +1,6 @@
 # CIC-2024
 
-# Title/NAME 
+# sproutpal
 
 # Description
 The goal of __sproutpal__ is to be able find and meet friends through similarities within characteristics such as hobbies. The model is from `langchain Bedrock` and uses `anthropic.claude-v2` to make its predictions. 
@@ -41,11 +41,4 @@ beautifulsoup4==4.12.2
 beautifulsoup4==4.12.2
 faiss-cpu>=1.7,<2
 python-dotenv
-```
-
-# Example usages 
-The user inputs data through the questionaire and an output data with a list of people who are most similar. <br>
-An example text prompt would be: <br> 
-```
-
 ```
