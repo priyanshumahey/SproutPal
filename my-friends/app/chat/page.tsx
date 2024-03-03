@@ -12,7 +12,7 @@ const Chat = () => {
   return (
     <div className="m-auto w-3/5">
       <div className="pt-32 text-3xl font-semibold text-center">
-        hi [name], what would you like to know about your pals?
+        what would you like to know about your pals?
       </div>
       <div className="pt-8 text-2xl text-center">examples:</div>
       <div className="grid grid-cols-2">
