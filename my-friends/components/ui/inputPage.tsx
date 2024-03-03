@@ -5,6 +5,7 @@ import { Checkbox as ChakraCheckbox, ChakraProvider } from "@chakra-ui/react";
 type InputPageProps = {
   question: string;
   setProgress: React.Dispatch<React.SetStateAction<number>>;
+  setValue?: any;
 };
 
 const daysOfWeek = [
@@ -17,7 +18,17 @@ const daysOfWeek = [
   "Sunday",
 ];
 
-const InputPage: React.FC<InputPageProps> = ({ question, setProgress }) => {
+const data = {
+  monday: false,
+  tuesday: false,
+  wednesday: false,
+  thursday: false,
+  friday: false,
+  saturday: false,
+  sunday: false,
+};
+
+const InputPage: React.FC<InputPageProps> = ({ question, setProgress, setValue }) => {
   return (
     <ChakraProvider>
       <main>
@@ -28,7 +39,9 @@ const InputPage: React.FC<InputPageProps> = ({ question, setProgress }) => {
           <div className="mt-8">
             {daysOfWeek.map((day, i) => (
               <div className="flex mt-4" key={i}>
-                <ChakraCheckbox />
+                <ChakraCheckbox onChange={(e) => {
+                  data[day.toLowerCase() as keyof typeof data] = e.target.checked;
+                }} />
                 <div className="pl-4">{day}</div>
               </div>
             ))}
@@ -39,6 +52,8 @@ const InputPage: React.FC<InputPageProps> = ({ question, setProgress }) => {
             className="float-right"
             onClick={() => {
               setProgress?.((prev: number) => prev + 1);
+              setValue(data);
+              console.log(data)
             }}
           >
             next

@@ -42,6 +42,10 @@ export default function Form() {
     setData((prev) => ({ ...prev, music }));
   };
 
+  const updateFreeDays = (free_days: any) => {
+    setData((prev) => ({ ...prev, free_days }));
+  }
+
   const updateVegetable = (spirit_veg: string) => {
     setData((prev) => ({ ...prev, spirit_veg }));
   };
@@ -76,6 +80,23 @@ export default function Form() {
     }
   };
 
+  const submitForm = () => {
+    fetch('/postUser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const renderFormPage = () => {
     if (progress === 0) {
       return (
@@ -89,7 +110,7 @@ export default function Form() {
     } else if (progress === 1) {
       return (
         <FormPage
-          question="hi! how old are you?"
+          question={`hi ${data.name}! how old are you?`}
           placeholder="age"
           setProgress={setProgress}
           setValue={updateAge}
@@ -101,15 +122,15 @@ export default function Form() {
           question="what type of music do you listen to?"
           placeholder="genre; songs"
           setProgress={setProgress}
-          setValue={setData}
+          setValue={updateMusic}
         />
       );
     } else if (progress === 3) {
       return (
         <InputPage
-          question="when are you usually free to meet up, [name]?"
+          question={`when are you usually free to meet up, ${data.name}?`}
           setProgress={setProgress}
-          setValue={updateMusic}
+          setValue={updateFreeDays}
         />
       );
     } else if (progress === 4) {
