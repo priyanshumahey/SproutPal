@@ -44,7 +44,7 @@ export default function Form() {
 
   const updateFreeDays = (free_days: any) => {
     setData((prev) => ({ ...prev, free_days }));
-  }
+  };
 
   const updateVegetable = (spirit_veg: string) => {
     setData((prev) => ({ ...prev, spirit_veg }));
@@ -81,16 +81,16 @@ export default function Form() {
   };
 
   const submitForm = () => {
-    fetch('/postUser', {
-      method: 'POST',
+    fetch("/postUser", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Success:', data);
+        console.log("Success:", data);
       })
       .catch((error) => {
         console.log(error);
@@ -194,6 +194,7 @@ export default function Form() {
             setProgress={setProgress}
             setValue={updateDiscord}
             progress={progress}
+            submitForm={submitForm}
           />
         </>
       );

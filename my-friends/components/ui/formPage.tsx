@@ -32,6 +32,7 @@ type FormPageProps = {
   setProgress: React.Dispatch<React.SetStateAction<number>>;
   setValue?: any;
   progress?: number;
+  submitForm?: () => void;
 };
 
 const FormPage: React.FC<FormPageProps> = ({
@@ -40,6 +41,7 @@ const FormPage: React.FC<FormPageProps> = ({
   setProgress,
   setValue,
   progress,
+  submitForm,
 }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -86,6 +88,7 @@ const FormPage: React.FC<FormPageProps> = ({
           className="float-right"
           onClick={() => {
             if (progress === 10) {
+              submitForm?.();
               router.push("/chat", { scroll: false });
             } else {
               setProgress?.((prev: number) => prev + 1);
