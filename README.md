@@ -1,8 +1,7 @@
 # CIC-2024
+# sproutpal
 
 <img width="991" alt="Screenshot 2024-03-02 at 5 26 12 PM" src="https://github.com/priyanshumahey/CIC-2024/assets/70789275/ff567d68-731b-4b82-8320-7951fb8ef563">
-
-# sproutpal
 
 # Description
 The goal of __sproutpal__ is to be able find and meet friends through similarities within characteristics such as hobbies. The model is from `langchain Bedrock` and uses `anthropic.claude-v2` to make its predictions. 
