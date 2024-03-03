@@ -3,7 +3,7 @@
 # Title/NAME 
 
 # Description
-The goal of ... is to be able find and meet friends through similarities within characteristics such as hobbies. The model is from langchain Bedrock and uses anthropic.claude-v2 to make its predictions. 
+The goal of ... is to be able find and meet friends through similarities within characteristics such as hobbies. The model is from `langchain Bedrock` and uses `anthropic.claude-v2` to make its predictions. 
 <br><br>
 
 The data within ... contains: 
