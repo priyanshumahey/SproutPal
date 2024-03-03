@@ -3,10 +3,10 @@
 # Title/NAME 
 
 # Description
-The goal of ... is to be able find and meet friends through similarities within characteristics such as hobbies. The model is from `langchain Bedrock` and uses `anthropic.claude-v2` to make its predictions. 
+The goal of __sproutpal__ is to be able find and meet friends through similarities within characteristics such as hobbies. The model is from `langchain Bedrock` and uses `anthropic.claude-v2` to make its predictions. 
 <br><br>
 
-The data within ... contains: 
+The data within __sproutpal__ contains: 
 
 `:user:` Data of the user through questions answered <br>
 
@@ -14,7 +14,7 @@ The data within ... contains:
 
 # Installation
 The installation can be found within:
-requiremnts.txt
+`requiremnts.txt`
 
 ```
 boto3>=1.28.57
@@ -44,6 +44,8 @@ python-dotenv
 ```
 
 # Example usages 
-The user inputs data through the questionaire and an output data with a list of people who are most similar. 
+The user inputs data through the questionaire and an output data with a list of people who are most similar. <br>
+An example text prompt would be: <br> 
+```
 
-# Licence 
+```
