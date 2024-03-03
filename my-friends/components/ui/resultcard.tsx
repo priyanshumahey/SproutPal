@@ -18,7 +18,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ name }) => {
       </div>
       <div className="w-4/5">
         <div className="flex">
-          <div className="font-bold">{name}</div>
+          <div className="font-bold">kirby</div>
           <Progress className="m-auto mx-8" value={33} />
         </div>
         <div className="mt-4">discord</div>

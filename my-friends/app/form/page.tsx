@@ -81,6 +81,7 @@ export default function Form() {
   };
 
   const submitForm = () => {
+    console.log("submit");
     fetch("/postUser", {
       method: "POST",
       headers: {

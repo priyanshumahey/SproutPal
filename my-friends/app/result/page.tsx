@@ -3,24 +3,24 @@ import React, { useEffect, useState } from "react";
 import ResultCard from "@/components/ui/resultcard";
 
 export default function Result() {
-  const [topMatched, setTopMatched] = useState([]);
+  const [topMatched, setTopMatched] = useState([1, 1, 1, 1, 1]);
 
-  useEffect(() => {
-    fetch("/getLLM", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("llm fetch", data);
-        setTopMatched(data.top_k);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/getLLM", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("llm fetch", data);
+  //       setTopMatched(data.top_k);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
   return (
     <div className="w-full">
       <div className="pt-24 text-3xl font-semibold text-center">
@@ -30,7 +30,7 @@ export default function Result() {
         {topMatched.map((d, i) => (
           <div className="flex m-auto">
             <div className="font-bold mr-8 font-3xl">{`${i + 1}.`}</div>
-            <ResultCard name={d} />
+            <ResultCard />
           </div>
         ))}
       </div>
