@@ -4,7 +4,11 @@ import { Progress } from "./progress";
 import sprout from "../../app/assets/sprout.png";
 import Image from "next/image";
 
-const ResultCard = () => {
+type ResultCardProps = {
+  name?: string;
+};
+
+const ResultCard: React.FC<ResultCardProps> = ({ name }) => {
   return (
     <Card className="w-[900px] p-8 my-8 flex">
       <div className="w-1/5">
@@ -14,7 +18,7 @@ const ResultCard = () => {
       </div>
       <div className="w-4/5">
         <div className="flex">
-          <div className="font-bold">Kirbo</div>
+          <div className="font-bold">{name}</div>
           <Progress className="m-auto mx-8" value={33} />
         </div>
         <div className="mt-4">discord</div>
