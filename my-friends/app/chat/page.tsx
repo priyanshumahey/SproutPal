@@ -37,7 +37,7 @@ const Chat = () => {
           onChange={(e) => setValue(e.target.value)}
         />
         <Button className="px-8">
-          <Link href="/result">go</Link>
+          <Link href="/reply">go</Link>
         </Button>
       </div>
     </div>
