@@ -162,21 +162,12 @@ export default function Form() {
     } else if (progress === 7) {
       return (
         <FormPage
-          question="nice choice! very healthy too. what is your horoscope?"
-          placeholder="genre; songs"
-          setProgress={setProgress}
-          setValue={updateHobbies}
-        />
-      );
-    } else if (progress === 8) {
-      return (
-        <FormPage
           question="what are some activities you dislike or would never try?"
           setProgress={setProgress}
           setValue={updateActivitiesDislike}
         />
       );
-    } else if (progress === 9) {
+    } else if (progress === 8) {
       return (
         <FormPage
           question="are there any hobbies that you have been wanting to get into?"
@@ -185,7 +176,7 @@ export default function Form() {
           progress={progress}
         />
       );
-    } else if (progress === 10) {
+    } else if (progress === 9) {
       return (
         <>
           {console.log(data)}

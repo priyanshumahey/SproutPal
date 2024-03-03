@@ -92,7 +92,7 @@ const FormPage: React.FC<FormPageProps> = ({
         <Button
           className="float-right"
           onClick={() => {
-            if (progress === 10) {
+            if (progress === 9) {
               submitForm?.();
               router.push("/chat", { scroll: false });
             } else {
