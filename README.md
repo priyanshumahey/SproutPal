@@ -9,9 +9,9 @@ The goal of __sproutpal__ is to be able find and meet friends through similariti
 
 The data within __sproutpal__ contains: 
 
-`:user:` Data of the user through questions answered <br>
+`user` Data of the user through questions answered <br>
 
-`:persons:` Contains data on other users such as hobbies, age, horoscope. 
+`persons` Contains data on other users such as hobbies, age, horoscope. 
 
 # Installation
 The installation can be found within:
