@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Input } from "./input";
 import { Button } from "./button";
 import { useRouter } from "next/navigation";
+import sprout from "../../app/assets/mainsprout.jpg";
+import Image from "next/image";
 
 import {
   Select,
@@ -77,8 +79,11 @@ const FormPage: React.FC<FormPageProps> = ({
   };
   return (
     <main className="w-full h-full absolute top-0 left-0">
+      <div className="pt-40 m-auto w-full">
+        <Image className="m-auto" src={sprout} alt="profile" />
+      </div>
       <div className="w-3/5 m-auto">
-        <div className="pt-56 text-4xl font-semibold text-center">
+        <div className="pt-6 text-4xl font-semibold text-center">
           {question}
         </div>
         <div className="mt-8">{renderInput()}</div>
