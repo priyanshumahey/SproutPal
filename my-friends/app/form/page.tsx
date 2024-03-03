@@ -81,7 +81,7 @@ export default function Form() {
   };
 
   const submitForm = () => {
-    fetch("/postUser", {
+    fetch("api/postUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -185,7 +185,7 @@ export default function Form() {
           progress={progress}
         />
       );
-    } else if (progress === 9) {
+    } else if (progress === 10) {
       return (
         <>
           {console.log(data)}
